@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Poem to Song AI</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-blue-100 to-purple-200 min-h-screen flex flex-col items-center justify-center">
+  <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-xl">
+    <h1 class="text-3xl font-bold text-center mb-4 text-purple-700">Poem to Song AI</h1>
+    <p class="text-center text-gray-600 mb-6">Transform your poem into a real song, instantly. Paste your poem, pick a music style, and try it with Suno or Udio AI!</p>
+    <form id="poemForm" class="space-y-4">
+      <textarea id="poemInput" rows="6" class="w-full border rounded-xl p-3 focus:outline-none" placeholder="Paste your poem here..."></textarea>
+      <select id="genreInput" class="w-full border rounded-xl p-2">
+        <option value="">Select Genre (Optional)</option>
+        <option>Pop</option>
+        <option>Hip-Hop</option>
+        <option>Acoustic</option>
+        <option>Rock</option>
+        <option>Classical</option>
+      </select>
+      <button type="button" id="sunoBtn" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-xl transition">Generate with Suno AI</button>
+      <button type="button" id="udioBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl transition mt-2">Generate with Udio AI</button>
+    </form>
+    <div class="mt-6 text-center">
+      <p class="text-gray-500 mb-2">🎵 Listen to Example Songs</p>
+      <audio controls class="w-full">
+        <source src="sample-song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+    <p class="mt-6 text-xs text-gray-400 text-center">Powered by AI | Instantly create songs from your poetry</p>
+  </div>
+  <script>
+    document.getElementById('sunoBtn').onclick = function() {
+      window.open("https://app.suno.ai/create/");
+    };
+    document.getElementById('udioBtn').onclick = function() {
+      window.open("https://app.udio.com/create");
+    };
+  </script>
+</body>
+</html>
